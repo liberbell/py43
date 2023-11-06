@@ -19,10 +19,10 @@ st.table(df.style.highlight_max(axis=0))
 ## second chapter
 ### third chapter
 
-'''python
+```python
 import streamlit as st
 import numpy as np
 import pandas as pd
-'''
+```
 
 """
