@@ -12,4 +12,4 @@ df = pd.DataFrame({
 })
 
 # st.write(df)
-st.dataframe(df.style.highlight_max(), width=100, height=100)
+st.dataframe(df.style.highlight_max(axis=0))
