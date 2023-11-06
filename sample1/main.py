@@ -12,4 +12,17 @@ df = pd.DataFrame({
 })
 
 # st.write(df)
-st.dataframe(df.style.highlight_max(axis=0))
+st.table(df.style.highlight_max(axis=0))
+
+"""
+# chapter
+## second chapter
+### third chapter
+
+'''python
+import streamlit as st
+import numpy as np
+import pandas as pd
+'''
+
+"""
