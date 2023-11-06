@@ -32,3 +32,4 @@ import pandas as pd
 
 """
 
+st.line_chart(df1)
