@@ -11,8 +11,13 @@ df = pd.DataFrame({
     "Second row": [10, 20, 30, 40]
 })
 
+df1 = pd.DataFrame(
+    np.random.rand(20, 3),
+    columns=["a", "b", "c"]
+)
+
 # st.write(df)
-st.table(df.style.highlight_max(axis=0))
+# st.table(df.style.highlight_max(axis=0))
 
 """
 # chapter
@@ -26,3 +31,4 @@ import pandas as pd
 ```
 
 """
+
