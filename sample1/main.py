@@ -34,3 +34,4 @@ import pandas as pd
 
 st.line_chart(df1)
 st.area_chart(df1)
+st.bar_chart(df1)
