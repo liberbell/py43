@@ -42,15 +42,20 @@ import pandas as pd
 # st.bar_chart(df1)
 # st.map(df2)
 
-st.write("Display image")
+# st.write("Display image")
 
 # if st.checkbox("Show image"):
 #     img = Image.open("aircraft.jpg")
 #     st.image(img, "aricraft", use_column_width=True)
 
-option = st.selectbox(
-    "Please select your favorite",
-    list(range(1, 11))
-)
+# option = st.selectbox(
+#     "Please select your favorite",
+#     list(range(1, 11))
+# )
 
-"Your favorite number is:", option
+# "Your favorite number is:", option
+
+st.write("Interactive Widgets")
+
+option = st.text_input("Please tell your hobby")
+"Your hobby is ", option
