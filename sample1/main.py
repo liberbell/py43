@@ -2,8 +2,9 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from PIL import Image
+import time
 
-# st.title("Streamlit introduction")
+st.title("Streamlit introduction")
 
 # st.write("DataFrame")
 
@@ -55,16 +56,16 @@ df2 = pd.DataFrame(
 
 # "Your favorite number is:", option
 
-st.write("Interactive Widgets")
+# st.write("Interactive Widgets")
 
-left_column, right_column = st.columns(2)
+# left_column, right_column = st.columns(2)
 
-button = left_column.button("Right button")
-if button:
-    right_column.write("This is right")
+# button = left_column.button("Right button")
+# if button:
+#     right_column.write("This is right")
 
-expander = st.expander("Query")
-expander.write("Input your query")
+# expander = st.expander("Query")
+# expander.write("Input your query")
 
 # option = st.text_input("Please tell your hobby")
 
@@ -73,3 +74,5 @@ expander.write("Input your query")
 
 # "Your hobby is ", option
 # "Your condition is ", condition
+
+st.write("Progress bar")
