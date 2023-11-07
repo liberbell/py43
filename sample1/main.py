@@ -63,6 +63,9 @@ button = left_column.button("Right button")
 if button:
     right_column.write("This is right")
 
+expander = st.expander("Query")
+expander.write("Input your query")
+
 # option = st.text_input("Please tell your hobby")
 
 
