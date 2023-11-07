@@ -59,3 +59,6 @@ st.write("Interactive Widgets")
 
 option = st.text_input("Please tell your hobby")
 "Your hobby is ", option
+
+condition = st.slider("How about you", 0, 50, 100)
+"Your condition is ", condition
