@@ -3,9 +3,9 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-st.title("Streamlit introduction")
+# st.title("Streamlit introduction")
 
-st.write("DataFrame")
+# st.write("DataFrame")
 
 df = pd.DataFrame({
     "First row": [1, 2, 3, 4],
@@ -24,18 +24,18 @@ df2 = pd.DataFrame(
 # st.write(df)
 # st.table(df.style.highlight_max(axis=0))
 
-"""
-# chapter
-## second chapter
-### third chapter
+# """
+# # chapter
+# ## second chapter
+# ### third chapter
 
-```python
-import streamlit as st
-import numpy as np
-import pandas as pd
-```
+# ```python
+# import streamlit as st
+# import numpy as np
+# import pandas as pd
+# ```
 
-"""
+# """
 
 # st.line_chart(df1)
 # st.area_chart(df1)
@@ -57,8 +57,16 @@ import pandas as pd
 
 st.write("Interactive Widgets")
 
-option = st.sidebar.text_input("Please tell your hobby")
-"Your hobby is ", option
+left_column, right_column = st.columns(2)
 
-condition = st.sidebar.slider("How about you", 0, 100, 50)
-"Your condition is ", condition
+button = left_column.button("Right button")
+if button:
+    right_column.write("This is right")
+
+# option = st.text_input("Please tell your hobby")
+
+
+# condition = st.slider("How about you", 0, 100, 50)
+
+# "Your hobby is ", option
+# "Your condition is ", condition
