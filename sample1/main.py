@@ -43,5 +43,7 @@ import pandas as pd
 # st.map(df2)
 
 st.write("Display image")
-img = Image.open("aircraft.jpg")
-st.image(img, "aricraft", use_column_width=True)
+
+if st.checkbox("Show image"):
+    img = Image.open("aircraft.jpg")
+    st.image(img, "aricraft", use_column_width=True)
