@@ -44,6 +44,13 @@ import pandas as pd
 
 st.write("Display image")
 
-if st.checkbox("Show image"):
-    img = Image.open("aircraft.jpg")
-    st.image(img, "aricraft", use_column_width=True)
+# if st.checkbox("Show image"):
+#     img = Image.open("aircraft.jpg")
+#     st.image(img, "aricraft", use_column_width=True)
+
+option = st.selectbox(
+    "Please select your favorite",
+    list(range(1, 11))
+)
+
+"Your favorite number is:", option
