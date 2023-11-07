@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+from PIL import Image
 
 st.title("Streamlit introduction")
 
@@ -39,3 +40,7 @@ import pandas as pd
 # st.line_chart(df1)
 # st.area_chart(df1)
 # st.bar_chart(df1)
+# st.map(df2)
+
+st.write("Display image")
+Image.open("aircraft.jpg")
