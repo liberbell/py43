@@ -17,7 +17,7 @@ df1 = pd.DataFrame(
 )
 
 df2 = pd.DataFrame(
-    np.random.rand(100, 3)/(50, 50) + [35.69, 139.70],
+    np.random.rand(100, 2)/[50, 50] + [35.69, 139.70],
     columns=["lat", "lon"]
 )
 # st.write(df)
