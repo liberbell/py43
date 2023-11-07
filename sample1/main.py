@@ -57,8 +57,8 @@ import pandas as pd
 
 st.write("Interactive Widgets")
 
-option = st.text_input("Please tell your hobby")
+option = st.sidebar.text_input("Please tell your hobby")
 "Your hobby is ", option
 
-condition = st.slider("How about you", 0, 100, 50)
+condition = st.sidebar.slider("How about you", 0, 100, 50)
 "Your condition is ", condition
