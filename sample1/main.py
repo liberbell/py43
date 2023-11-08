@@ -76,3 +76,6 @@ df2 = pd.DataFrame(
 # "Your condition is ", condition
 
 st.write("Progress bar")
+
+latest_iteration = st.empty()
+bar = st.progress(0)
