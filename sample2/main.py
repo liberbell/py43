@@ -1,3 +1,7 @@
 import pandas as pd
-from matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import yfinance as yf
+
+%matplotlib inline
+
+aapl = yf.Ticker("AAPL")
