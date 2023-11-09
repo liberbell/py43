@@ -5,3 +5,4 @@ import yfinance as yf
 # %matplotlib inline
 
 aapl = yf.Ticker("AAPL")
+print(aapl.history())
