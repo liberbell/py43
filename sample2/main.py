@@ -5,4 +5,5 @@ import yfinance as yf
 # %matplotlib inline
 
 aapl = yf.Ticker("AAPL")
-print(aapl.history())
+days = 20
+print(aapl.history(period=f"{days}d"))
