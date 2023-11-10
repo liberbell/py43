@@ -15,4 +15,5 @@ hist_aapl = aapl.history(period=f"{days}d")
 
 # print([hist_aapl, hist_msft], axix=1)
 
-print(hist_aapl.index.strftime("%d %B %Y"))
+hist_aapl.index = hist_aapl.index.strftime("%d %B %Y")
+print(hist_aapl.head())
