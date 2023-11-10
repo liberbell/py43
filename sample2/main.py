@@ -4,9 +4,16 @@ import yfinance as yf
 
 # %matplotlib inline
 
-aapl = yf.Ticker("AAPL")
 days = 20
-hist_aapl = aapl.history(period=f"{days}d")
+tickers = {
+    "Apple": "AAPL",
+    "Microsoft": "MSFT",
+    "Facebook": "FB",
+}
+company = "Apple"
+
+tkr = yf.Ticker(tickers[company])
+hist = tkr.history(period=f"{days}d")
 # print(hist_aapl)
 
 # msft = yf.Ticker("MSFT")
@@ -15,12 +22,12 @@ hist_aapl = aapl.history(period=f"{days}d")
 
 # print([hist_aapl, hist_msft], axix=1)
 
-hist_aapl.index = hist_aapl.index.strftime("%d %B %Y")
+hist.index = hist.index.strftime("%d %B %Y")
 # print(hist_aapl.head())
 
-hist_aapl = hist_aapl[["Close"]]
-hist_aapl.columns = ["Apple"]
-hist_aapl = hist_aapl.T
-hist_aapl.index.name = "Name"
+hist = hist[["Close"]]
+hist.columns = ["Apple"]
+hist = hist.T
+hist.index.name = "Name"
 
 print(hist_aapl)
