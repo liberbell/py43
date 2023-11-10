@@ -16,4 +16,7 @@ hist_aapl = aapl.history(period=f"{days}d")
 # print([hist_aapl, hist_msft], axix=1)
 
 hist_aapl.index = hist_aapl.index.strftime("%d %B %Y")
-print(hist_aapl.head())
+# print(hist_aapl.head())
+
+hist_aapl = hist_aapl[["Close"]]
+print(hist_aapl)
