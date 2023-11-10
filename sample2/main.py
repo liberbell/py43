@@ -20,4 +20,7 @@ hist_aapl.index = hist_aapl.index.strftime("%d %B %Y")
 
 hist_aapl = hist_aapl[["Close"]]
 hist_aapl.columns = ["Apple"]
+hist_aapl = hist_aapl.T
+hist_aapl.index.name = "Name"
+
 print(hist_aapl)
