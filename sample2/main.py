@@ -6,4 +6,5 @@ import yfinance as yf
 
 aapl = yf.Ticker("AAPL")
 days = 20
-print(aapl.history(period=f"{days}d"))
+hist = aapl.history(period=f"{days}d")
+print(hist)
