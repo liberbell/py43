@@ -13,27 +13,29 @@ tickers = {
     "Netflix": "NFLX",
     "Amazon": "AMZN"
 }
-# company = "Facebook"
-df = pd.DataFrame()
-for company in tickers.keys():
-    tkr = yf.Ticker(tickers[company])
-    hist = tkr.history(period=f"{days}d")
-    # print(hist_aapl)
 
-    # msft = yf.Ticker("MSFT")
-    # hist_msft = msft.history(period=f"{days}d")
-    # print(hist_msft)
+def get_data(days, tickers):
+    df = pd.DataFrame()
+    for company in tickers.keys():
+        tkr = yf.Ticker(tickers[company])
+        hist = tkr.history(period=f"{days}d")
+        # print(hist_aapl)
 
-    # print([hist_aapl, hist_msft], axix=1)
+        # msft = yf.Ticker("MSFT")
+        # hist_msft = msft.history(period=f"{days}d")
+        # print(hist_msft)
 
-    hist.index = hist.index.strftime("%d %B %Y")
-    # print(hist_aapl.head())
+        # print([hist_aapl, hist_msft], axix=1)
 
-    hist = hist[["Close"]]
-    hist.columns = [company]
-    hist = hist.T
-    hist.index.name = "Name"
-    df = pd.concat([df, hist])
+        hist.index = hist.index.strftime("%d %B %Y")
+        # print(hist_aapl.head())
+
+        hist = hist[["Close"]]
+        hist.columns = [company]
+        hist = hist.T
+        hist.index.name = "Name"
+        df = pd.concat([df, hist])
+    return df
 
     # print(hist)
-print(df)
+print(get_data(days, tickers))
