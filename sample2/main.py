@@ -26,8 +26,8 @@ hist.index = hist.index.strftime("%d %B %Y")
 # print(hist_aapl.head())
 
 hist = hist[["Close"]]
-hist.columns = ["Apple"]
+hist.columns = [company]
 hist = hist.T
 hist.index.name = "Name"
 
-print(hist_aapl)
+print(hist)
