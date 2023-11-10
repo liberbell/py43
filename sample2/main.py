@@ -9,10 +9,13 @@ tickers = {
     "Apple": "AAPL",
     "Microsoft": "MSFT",
     "Facebook": "META",
+    "Google": "GOOGL",
+    "Netflix": "NFLX",
+    "Amazon": "AMZN"
 }
 # company = "Facebook"
 df = pd.DataFrame()
-for comp in tickers.keys():
+for company in tickers.keys():
     tkr = yf.Ticker(tickers[company])
     hist = tkr.history(period=f"{days}d")
     # print(hist_aapl)
@@ -30,6 +33,7 @@ for comp in tickers.keys():
     hist.columns = [company]
     hist = hist.T
     hist.index.name = "Name"
-    pd.concat([df, hist])
+    df = pd.concat([df, hist])
 
     # print(hist)
+print(df)
