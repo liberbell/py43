@@ -19,4 +19,5 @@ hist_aapl.index = hist_aapl.index.strftime("%d %B %Y")
 # print(hist_aapl.head())
 
 hist_aapl = hist_aapl[["Close"]]
+hist_aapl.columns = ["Apple"]
 print(hist_aapl)
