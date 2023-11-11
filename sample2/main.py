@@ -42,4 +42,5 @@ def get_data(days, tickers):
     # print(hist)
 print(get_data(days, tickers))
 companies = ["Apple", "Facebook"]
-df.loc(companies)
+data = df.loc(companies)
+print(data)
