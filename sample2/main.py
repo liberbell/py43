@@ -44,3 +44,6 @@ print(get_data(days, tickers))
 companies = ["Apple", "Facebook"]
 data = df.loc(companies)
 print(data)
+
+data.sort_index()
+data = data.T.reset_index()
