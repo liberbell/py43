@@ -47,3 +47,6 @@ print(data)
 
 data.sort_index()
 data = data.T.reset_index()
+data = pd.melt(data, id_vars=["Date"]).rename(
+    columns={'value': 'Stock Price(USD)'}
+)
