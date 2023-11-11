@@ -18,6 +18,7 @@ def get_data(days, tickers):
     df = pd.DataFrame()
     for company in tickers.keys():
         tkr = yf.Ticker(tickers[company])
+        print(tkr.info)
         hist = tkr.history(period=f"{days}d")
         # print(hist_aapl)
 
