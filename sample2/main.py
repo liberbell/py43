@@ -9,7 +9,7 @@ tickers = {
     "Facebook": "META",
     "Google": "GOOGL",
     "Microsoft": "MSFT",
-    "Netflix": "NTLX",
+    "Netflix": "NFLX",
     "Amazon": "AMZN"
 }
 
@@ -35,7 +35,7 @@ def get_data(days, tickers):
     for company in tickers.keys():
         tkr = yf.Ticker(tickers[company])
         hist = tkr.history(period=f"{days}d")
-        hist.index = hist.index.strftime("%d %D %Y")
+        hist.index = hist.index.strftime("%d %B %Y")
         hist = hist[["Close"]]
         hist.columns = [company]
         hist = hist.T
@@ -49,4 +49,5 @@ st.sidebar.write("""
 ymin, ymax = st.sidebar.slider("Input Price Range", 0.0, 3500.0, (0.0, 3500.0))
 
 df = get_data(days, tickers)
-st.multiselect("Select company", list(df.index))
+st.multiselect("Select company", list(df.index),
+               ["Google", "Facebook", "Apple", "Amazon"])
