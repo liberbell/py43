@@ -29,7 +29,7 @@ st.write(f"""
          ### GAFA Stock Price past **{days} days**
          """)
 
-@st.cache
+@st.cache_data
 def get_data(days, tickers):
     df = pd.DataFrame()
     for company in tickers.keys():
@@ -49,5 +49,10 @@ st.sidebar.write("""
 ymin, ymax = st.sidebar.slider("Input Price Range", 0.0, 3500.0, (0.0, 3500.0))
 
 df = get_data(days, tickers)
-st.multiselect("Select company", list(df.index),
+companies = st.multiselect("Select company", list(df.index),
                ["Google", "Facebook", "Apple", "Amazon"])
+
+if not companies:
+    st.error("Select at least one company")
+else:
+    data = df.loc[companies]
