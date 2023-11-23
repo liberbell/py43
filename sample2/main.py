@@ -58,7 +58,7 @@ chart = (
         x="Date:T",
         y=alt.Y("Stock Prices(USD):Q",
         stack=None,
-        scale=alt.Scale()),
+        scale=alt.Scale(domain=[200, 300])),
         color="Name:N"
     )
 )
