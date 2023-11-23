@@ -57,7 +57,9 @@ chart = (
     .encode(
         x="Date:T",
         y=alt.Y("Stock Prices(USD):Q",
-        stack=None),
-        color="Name:N")
+        stack=None,
+        scale=alt.Scale()),
+        color="Name:N"
+    )
 )
 chart
