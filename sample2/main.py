@@ -66,7 +66,8 @@ else:
         alt.Chart(data).mark_line(opacity=0.8, clip=True)
         .encode(
             x="Date:T",
-            y=alt.Y("Stock Price:USD:Q", scale=alt.Scale),
+            y=alt.Y("Stock Price:USD:Q", scale=alt.Scale(domain=[ymin, ymax])),
             color="Name:N"
         )
     )
+    st.altair_chart(chart, use_container_width=True)
