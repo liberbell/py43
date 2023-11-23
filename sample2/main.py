@@ -56,3 +56,4 @@ if not companies:
     st.error("Select at least one company")
 else:
     data = df.loc[companies]
+    st.write("### Stock Price US", data.sort_index())
