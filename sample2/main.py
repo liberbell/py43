@@ -29,4 +29,8 @@ st.write(f"""
          ### GAFA Stock Price past **{days} days**
          """)
 
-def get_data(days, tickers)
+def get_data(days, tickers):
+    df = pd.DataFrame()
+    for company in tickers.keys():
+        tkr = yf.Ticker(tickers[company])
+        hist = tkr.history(period=f"{days}d")
