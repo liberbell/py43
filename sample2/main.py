@@ -50,3 +50,14 @@ data = data.T.reset_index()
 data = pd.melt(data, id_vars=["Date"]).rename(
     columns={'value': 'Stock Price(USD)'}
 )
+
+chart = (
+    alt.Chart(data)
+    .mark_line(opacity=0.8)
+    .encode(
+        x="Date:T",
+        y=alt.Y("Stock Prices(USD):Q",
+        stack=None),
+        color="Name:N")
+)
+chart
