@@ -16,8 +16,8 @@ tickers = {
 st.title("American Stock Price")
 
 st.sidebar.write("""
-                 # GAFA Stock price
-                 # Visualize tool
+                 ## GAFA Stock price
+                 ## Visualize tool
                  """)
 
 st.sidebar.write("Display days")
@@ -29,6 +29,7 @@ st.write(f"""
          ### GAFA Stock Price past **{days} days**
          """)
 
+@st.cache
 def get_data(days, tickers):
     df = pd.DataFrame()
     for company in tickers.keys():
@@ -41,3 +42,8 @@ def get_data(days, tickers):
         hist.index.name = "Name"
         df = pd.concat([df, hist])
     return df
+
+st.sidebar.write("""
+                 ## Stock Price Range
+                 """)
+st.sidebar.slider("Input Price Range", 0.0, 3500.0, (0.0, 3500.0))
