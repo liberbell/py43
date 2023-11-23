@@ -46,4 +46,7 @@ def get_data(days, tickers):
 st.sidebar.write("""
                  ## Stock Price Range
                  """)
-st.sidebar.slider("Input Price Range", 0.0, 3500.0, (0.0, 3500.0))
+ymin, ymax = st.sidebar.slider("Input Price Range", 0.0, 3500.0, (0.0, 3500.0))
+
+df = get_data(days, tickers)
+st.multiselect("Select company", list(df.index))
