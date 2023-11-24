@@ -43,31 +43,36 @@ def get_data(days, tickers):
         df = pd.concat([df, hist])
     return df
 
-st.sidebar.write("""
-                 ## Stock Price Range
-                 """)
-ymin, ymax = st.sidebar.slider("Input Price Range", 0.0, 3500.0, (0.0, 3500.0))
+try:
+    st.sidebar.write("""
+                    ## Stock Price Range
+                    """)
+    ymin, ymax = st.sidebar.slider("Input Price Range", 0.0, 3500.0, (0.0, 3500.0))
 
-df = get_data(days, tickers)
-companies = st.multiselect("Select company", list(df.index),
-               ["Google", "Facebook", "Apple", "Amazon"])
+    df = get_data(days, tickers)
+    companies = st.multiselect("Select company", list(df.index),
+                ["Google", "Facebook", "Apple", "Amazon"])
 
-if not companies:
-    st.error("Select at least one company")
-else:
-    data = df.loc[companies]
-    st.write("### Stock Price US", data.sort_index())
-    data = data.T.reset_index()
-    data = pd.melt(data, id_vars=["Date"]).rename(
-        columns={'value': 'Stock Prices(USD)'}
-    )
-
-    chart = (
-        alt.Chart(data).mark_line(opacity=0.8, clip=True)
-        .encode(
-            x="Date:T",
-            y=alt.Y("Stock Price(USD):Q", stack=None, scale=alt.Scale(domain=[ymin, ymax])),
-            color="Name:N"
+    if not companies:
+        st.error("Select at least one company")
+    else:
+        data = df.loc[companies]
+        st.write("### Stock Price US", data.sort_index())
+        data = data.T.reset_index()
+        data = pd.melt(data, id_vars=["Date"]).rename(
+            columns={'value': 'Stock Prices(USD)'}
         )
-    )
-    st.altair_chart(chart, use_container_width=True)
+
+        chart = (
+            alt.Chart(data).mark_line(opacity=0.8, clip=True)
+            .encode(
+                x="Date:T",
+                y=alt.Y("Stock Price(USD):Q", stack=None, scale=alt.Scale(domain=[ymin, ymax])),
+                color="Name:N"
+            )
+        )
+        st.altair_chart(chart, use_container_width=True)
+except:
+    st.error("""
+             Oops! Something went wrong
+             """)
