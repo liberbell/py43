@@ -67,7 +67,8 @@ try:
             alt.Chart(data).mark_line(opacity=0.8, clip=True)
             .encode(
                 x="Date:T",
-                y=alt.Y("Stock Price(USD):Q", stack=None, scale=alt.Scale(domain=[ymin, ymax])),
+                y=alt.Y("Stock Price(USD):Q", stack=None,
+                scale=alt.Scale(domain=[ymin, ymax])),
                 color="Name:N"
             )
         )
