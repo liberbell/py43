@@ -54,8 +54,7 @@ else:
     st.write("### Stock Price US", data.sort_index())
     data = data.T.reset_index()
     data = pd.melt(data, id_vars=["Date"]).rename(
-            columns={'value': 'Stock Prices(USD)'}
-        )
+       columns={"value": "Stock Price(USD)"})
 
     chart = (
         alt.Chart(data)
