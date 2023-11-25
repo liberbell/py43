@@ -8,4 +8,5 @@ st.sidebar.write("""
                  ## GAFA Stock price
                  ## Visualize tool
                  """)
-st.sidebar.write("Display days")
+st.sidebar.write("Select Display days")
+days = st.sidebar.slider("Days", 1, 50, 20)
