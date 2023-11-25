@@ -50,7 +50,7 @@ try:
                             ["Google", "Facebook", "Apple", "Amazon"])
 
     if not companies:
-    st.error("Select at least one company")
+        st.error("Select at least one company")
     else:
         data = df.loc[companies]
         st.write("### Stock Price US", data.sort_index())
@@ -71,6 +71,6 @@ try:
         st.altair_chart(chart, use_container_width=True)
     
 except:
-   st.error("""
+    st.error("""
              Oops! Something went wrong
              """)
