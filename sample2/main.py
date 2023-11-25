@@ -29,7 +29,7 @@ st.write(f"""
          ### GAFA Stock Price past **{days} days**
          """)
 
-# @st.cache_data
+@st.cache_data
 def get_data(days, tickers):
     df = pd.DataFrame()
     for company in tickers.keys():
