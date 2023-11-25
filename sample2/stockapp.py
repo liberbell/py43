@@ -15,16 +15,6 @@ st.write(f"""
          ### GAFA Stock Price past **{days} days**
          """)
 
-days = 20
-tickers = {
-    "Apple": "AAPL",
-    "Facebook": "META",
-    "Google": "GOOGL",
-    "Microsoft": "MSFT",
-    "Netflix": "NFLX",
-    "Amazon": "AMZN"
-}
-
 def get_data(dats, tickers):
   df = pd.DataFrame()
   for company in tickers.keys():
@@ -43,3 +33,12 @@ st.sidebar.write("""
                 """)
 
 ymin, ymax = st.sidebar.slider("Input Price Range", 0.0, 3500.0, (0.0, 3500.0))
+
+tickers = {
+    "Apple": "AAPL",
+    "Facebook": "META",
+    "Google": "GOOGL",
+    "Microsoft": "MSFT",
+    "Netflix": "NFLX",
+    "Amazon": "AMZN"
+}
