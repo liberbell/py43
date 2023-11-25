@@ -37,3 +37,9 @@ def get_data(dats, tickers):
     hist.index.name = "Name"
     df = pd.concat([df, hist])
   return df
+
+st.sidebar.write("""
+                ## Stock Price Range
+                """)
+
+ymin, ymax = st.sidebar.slider("Input Price Range", 0.0, 3500.0, (0.0, 3500.0))
