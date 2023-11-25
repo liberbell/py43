@@ -42,3 +42,10 @@ tickers = {
     "Netflix": "NFLX",
     "Amazon": "AMZN"
 }
+
+df = get_data(days, tickers)
+companies = st.multiselect("Select company", list(df.index),
+                           ["Google", "Facebook", "Apple", "Amazon"])
+
+if not companies:
+  st.error("Select at least one company")
